@@ -1,0 +1,3 @@
+steam:
+    resource: "@SteamBundle/Resources/config/routing.yml"
+    prefix:   /
