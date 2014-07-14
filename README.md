@@ -13,3 +13,7 @@ Usage Windows
 4. Run composer from inside the project with "composer update"
 5. Run "php app/console server:run" to start a local webserver
 6. Enjoy!
+
+Extra Information
+----------------------------------
+Default URL "127.0.0.1:8000/app_dev.php/steam/{name}"
