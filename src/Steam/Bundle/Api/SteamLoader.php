@@ -25,7 +25,8 @@ class SteamLoader
         $this->steamKey = $params['steamKey'];
     }
 
-    public function getUserData($steamid) {
+    public function getUserData($steamid)
+    {
         $params = [
             'key' => $this->steamKey,
             'steamids' => $steamid
@@ -40,7 +41,8 @@ class SteamLoader
         return $result;
     }
 
-    public function getSteamFriends($steam_user_id, $relationship) {
+    public function getSteamFriends($steam_user_id, $relationship)
+    {
         $params = [
             'key' => $this->steamKey,
             'steamid' => $steam_user_id,
@@ -54,6 +56,11 @@ class SteamLoader
             return false;
         }
         return $result;
+    }
+
+    public function getGameInfo($steam_game_id)
+    {
+        return 0;
     }
 
     private function exec_url($url)

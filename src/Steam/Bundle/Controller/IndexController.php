@@ -20,18 +20,18 @@ class IndexController extends Controller
             ]
         );
 
-        $user = $SteamLoader->getUserData('76561197999903331')['response']['players'][0];
-
-        $friends = $SteamLoader->getSteamFriends('76561197999903331', SteamLoader::STEAMFRIENDSFILTER);
-        $friend = $SteamLoader->getUserData($friends['friendslist']['friends'][0]['steamid'])['response']['players'][0];
-
-        var_dump($friend);
-
+        if (!isset($_GET['steam_id'])) {
+            return $this->render('SteamBundle:Default:index.html.twig');
+        }
+        $steamId = $_GET['steam_id'];
+        $user = $SteamLoader->getUserData($steamId)['response']['players'][0];
 
         return $this->render('SteamBundle:Default:index.html.twig', [
-            'userAvatar' => $user['avatar'],
-            'friendAvatar' => $friend['avatar']
+            'SUCCESS' => TRUE,
+            'userAvatar' => $user['avatarfull'],
+            'name' => $user['personaname'],
+            'nameGame' => $user['gameextrainfo'],
+            'profileUrl' => $user['profileurl']
         ]);
     }
-
 }

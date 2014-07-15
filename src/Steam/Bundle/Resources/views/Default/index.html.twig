@@ -6,15 +6,29 @@
     {% endstylesheets %}
 </head>
 <body>
+<div class="center container">
     <h1 class="center_text">
         Welcome to the best steam information website!
     </h1>
+    <form action="{{ path('steam_user') }}" method="GET">
+        <br>
+        <label class="label" for="steam_id">Enter steam id here</label>
+        <input class="textfield" id="steam_id" name="steam_id" type="text">
+        <input class="button" type="submit">
+        <br>
+    </form>
+    {% if SUCCESS is defined %}
+        <div class="content">
+            <br>
+            <img src="{{ userAvatar }}">
+            <br>
+            <a href="{{ profileUrl }}"><h3>{{ name }}</h3></a>
+            <br>
+            <h3>Currently playing :  {{ nameGame }}</h3>
+        </div>
 
-    <a href="{{ path('steam_user') }}"><h2 class="center_text">Click here to load friends</h2></a>
-
-    {% if userAvatar is defined %}
-        <img src="{{ userAvatar }}">
-        <img src="{{ friendAvatar }}">
     {% endif %}
+</div>
+
 </body>
 </html>
