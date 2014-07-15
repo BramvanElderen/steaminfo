@@ -17,3 +17,5 @@ Usage Windows
 Extra Information
 ----------------------------------
 Default URL "127.0.0.1:8000/app_dev.php/steam/{name}"
+
+Updating resources like css and javascript files require "php app/console assets:install"
