@@ -1,3 +1,7 @@
 steam_homepage:
-    path:     /steam
-    defaults: { _controller: SteamBundle:Index:index }
+  path: /steam
+  defaults: { _controller: SteamBundle:Index:index }
+
+steam_user:
+  path: /steam/user
+  defaults: { _controller: SteamBundle:Index:user }

@@ -6,8 +6,15 @@
     {% endstylesheets %}
 </head>
 <body>
-    <h1 id="title">
+    <h1 class="center_text">
         Welcome to the best steam information website!
     </h1>
+
+    <a href="{{ path('steam_user') }}"><h2 class="center_text">Click here to load friends</h2></a>
+
+    {% if userAvatar is defined %}
+        <img src="{{ userAvatar }}">
+        <img src="{{ friendAvatar }}">
+    {% endif %}
 </body>
 </html>
